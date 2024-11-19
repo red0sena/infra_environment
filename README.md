@@ -72,6 +72,6 @@ Helm 차트는 FastAPI 애플리케이션과 PostgreSQL 데이터베이스를 Mi
 
 ## 5. Grafana를 이용한 메트릭 모니터링
 
-![image.png](./img/02)
+![image.png](./img/02.png)
 
 - Memory, CPU 등 메트릭 을 수집하여 Grafana로 시각화하였습니다.
