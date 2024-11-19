@@ -59,7 +59,7 @@ Helm 차트는 FastAPI 애플리케이션과 PostgreSQL 데이터베이스를 Mi
 
 1. **`Chart.yaml`**:
     - Helm 차트의 메타데이터 정의합니다.
-    - rPometheus 기반 모니터링을 설정합니다.
+    - Pometheus 기반 모니터링을 설정합니다.
 2. **`values.yaml`**:
     - PostgreSQL 및 FastAPI 설정을 포함한 사용자 지정 값:
         - PostgreSQL은 1GB PVC를 사용하고, `postgres:13` 이미지를 사용합니다.
@@ -75,3 +75,5 @@ Helm 차트는 FastAPI 애플리케이션과 PostgreSQL 데이터베이스를 Mi
 ![image.png](./img/02.png)
 
 - Memory, CPU 등 메트릭 을 수집하여 Grafana로 시각화하였습니다.
+- Request Latency Seconds는 `REQUEST_LATENCY` 를 통해 수집되었습니다.
+- 해당 메트릭을 통해 Node, 혹은 Pod를 스케일링할 수 있습니다.
