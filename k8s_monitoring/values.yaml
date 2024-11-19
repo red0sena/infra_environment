@@ -1,0 +1,38 @@
+# PostgreSQL 설정
+postgresql:
+  image: postgres:13
+  username: postgres
+  password: your_password
+  database: your_database
+  persistence:
+    enabled: true
+    size: 1Gi
+
+# FastAPI 설정
+fastapi:
+  image: kyunghwankim/stclab:1.2
+  replicas: 2
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 100m
+      memory: 128Mi
+
+# HPA 설정
+hpa:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 50
+
+# Prometheus 설정
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelector:
+      matchLabels:
+        release: my-app
+    podMonitorSelector:
+      matchLabels:
+        release: my-app
