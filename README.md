@@ -8,8 +8,8 @@
 ## 1. 코드 구조
 
 ```
-k8s_monitoring_terraform/
-├── k8s_monitoring/
+infra_environment/
+├── infra_environment/
 │   ├── Chart.yaml
 │   ├── charts/
 │   │   └── kube-prometheus-stack-51.2.0.tgz
@@ -42,8 +42,8 @@ k8s_monitoring_terraform/
 Terraform 코드는 Minikube 네임스페이스 및 Helm 차트를 자동으로 배포하기 위해 작성되었습니다.
 
 1. **`main.tf`**:
-    - `kubernetes_namespace`: `monitoring`이라는 네임스페이스를 생성합니다.
-    - `helm_release`: Helm을 사용하여 `k8s_monitoring` 차트를 네임스페이스에 배포합니다.
+    - `kubernetes_namespace`: `infra_environment`이라는 네임스페이스를 생성합니다.
+    - `helm_release`: Helm을 사용하여 `infra_environment` 차트를 네임스페이스에 배포합니다.
     - `values.yaml`을 참조하여 사용자 지정 값을 제공합니다.
 2. **`variables.tf`**:
     - 변수 정의 파일로, `minikube_context` 변수를 정의하여 Minikube 환경에서 실행할 수 있도록 지원합니다.
